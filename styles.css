@@ -5,12 +5,17 @@
     margin: 0px auto;
 }
 
+button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+}
+
 .box {
     background-color: rgb(189, 224, 255);
     box-sizing: border-box;
 }
 
 .hoverBox {
-    background-color: rgb(255, 141, 121);
     box-sizing: border-box;
 }

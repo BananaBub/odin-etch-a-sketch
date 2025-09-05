@@ -36,6 +36,8 @@ function createGrid(resolution) {
         box.addEventListener("mouseenter",  () => {
             box.classList.remove("box");
             box.classList.add("hoverBox");
+            box.style.backgroundColor = 
+            `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
         })
 
         gridContainer.appendChild(box);
@@ -43,11 +45,3 @@ function createGrid(resolution) {
 }
 
 createGrid(resolution);
-
-function changeColor() {
-    gridItems.addEventListener("mouseenter", function (e) {
-        console.log(e);
-        e.classList.toggle("box");
-        e.classList.toggle("hoverBox");
-    })
-}
