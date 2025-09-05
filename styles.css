@@ -1,18 +1,16 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 2000px;
+    width: 500px;
     margin: 0px auto;
 }
 
 .box {
     background-color: rgb(189, 224, 255);
     box-sizing: border-box;
-    padding: 10px;
 }
 
 .hoverBox {
     background-color: rgb(255, 141, 121);
     box-sizing: border-box;
-    padding: 10px;
 }

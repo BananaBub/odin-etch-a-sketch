@@ -28,13 +28,10 @@ function createGrid(resolution) {
     for(i = 1; i <= resolution ** 2; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
-        box.textContent = "."
 
         let boxSize = (gridWidth / resolution + "px");
         box.style.width = boxSize;
         box.style.height = boxSize;
-        //Using parseFloat will just result in NaN because of "px." Replace or splice px first then solve. Good night!
-        //Tangina hindi ko pa rin gets! Hindi nakukung ng gridContainer 'yung style ;(
 
         box.addEventListener("mouseenter",  () => {
             box.classList.remove("box");
