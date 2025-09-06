@@ -12,10 +12,11 @@ button {
 }
 
 .box {
-    background-color: rgb(189, 224, 255);
+    background-color: rgb(152, 209, 255);
     box-sizing: border-box;
 }
 
 .hoverBox {
+    background-color: rgb(255, 119, 119);
     box-sizing: border-box;
 }

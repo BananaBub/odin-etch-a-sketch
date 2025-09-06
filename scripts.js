@@ -33,11 +33,21 @@ function createGrid(resolution) {
         box.style.width = boxSize;
         box.style.height = boxSize;
 
+        box.style.opacity = 0.5;
+        //Enable when changing opacity
+
         box.addEventListener("mouseenter",  () => {
-            box.classList.remove("box");
-            box.classList.add("hoverBox");
-            box.style.backgroundColor = 
-            `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
+            // box.classList.remove("box");
+            // box.classList.add("hoverBox");
+            //Disable toggles to class list when changing opacity
+
+            box.style.opacity = Number(box.style.opacity) + 0.2;
+
+            //Increase opacity every time mouse enters
+
+            // box.style.backgroundColor = 
+            // `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
+            //Change box color to random
         })
 
         gridContainer.appendChild(box);
