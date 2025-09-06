@@ -25,6 +25,10 @@ function createGrid(resolution) {
 
     gridItems.forEach((item) => item.remove());
 
+    let isKeyDown;
+    document.addEventListener("keydown", () => isKeyDown = true);
+    document.addEventListener("keyup", () => isKeyDown = false);
+
     for(i = 1; i <= resolution ** 2; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
@@ -33,21 +37,22 @@ function createGrid(resolution) {
         box.style.width = boxSize;
         box.style.height = boxSize;
 
-        box.style.opacity = 0.5;
+        //box.style.opacity = 0.5;
         //Enable when changing opacity
 
         box.addEventListener("mouseenter",  () => {
-            // box.classList.remove("box");
-            // box.classList.add("hoverBox");
-            //Disable toggles to class list when changing opacity
+            if(isKeyDown) {
+                box.classList.remove("box");
+                box.classList.add("hoverBox");
+                //Disable toggles to class list when changing opacity
 
-            box.style.opacity = Number(box.style.opacity) + 0.2;
+                //box.style.opacity = Number(box.style.opacity) + 0.2;
+                //Increase opacity every time mouse enters
 
-            //Increase opacity every time mouse enters
-
-            // box.style.backgroundColor = 
-            // `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
-            //Change box color to random
+                // box.style.backgroundColor = 
+                // `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
+                //Change box color to random
+            }
         })
 
         gridContainer.appendChild(box);
