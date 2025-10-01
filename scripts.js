@@ -25,9 +25,10 @@ function createGrid(resolution) {
 
     gridItems.forEach((item) => item.remove());
 
-    let isKeyDown;
-    document.addEventListener("keydown", () => isKeyDown = true);
-    document.addEventListener("keyup", () => isKeyDown = false);
+    let isDrawing;
+    let isErasing;
+    document.addEventListener("keydown", () => (isDrawing = true, isErasing = false));
+    document.addEventListener("keyup", () => (isDrawing = false, isErasing = true));
 
     for(i = 1; i <= resolution ** 2; i++) {
         let box = document.createElement("div");
@@ -41,7 +42,7 @@ function createGrid(resolution) {
         //Enable when changing opacity
 
         box.addEventListener("mouseenter",  () => {
-            if(isKeyDown) {
+            if(isDrawing) {
                 box.classList.remove("box");
                 box.classList.add("hoverBox");
                 //Disable toggles to class list when changing opacity
@@ -52,6 +53,9 @@ function createGrid(resolution) {
                 // box.style.backgroundColor = 
                 // `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
                 //Change box color to random
+            } else if(isErasing) {
+                box.classList.remove("hoverBox");
+                box.classList.add("box");
             }
         })
 
