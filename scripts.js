@@ -1,4 +1,4 @@
-const resolutionButton = document.querySelector("button");
+const resolutionButton = document.querySelector(".resolution");
 
 let resolution = 16;
 
